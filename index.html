@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <title>Hello</title>
-  </head>
-  <body>
-    <h1 style="color: grey;">Hello!</h1>
-  </body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function detectLanguage() {
+            const lang = navigator.language || navigator.userLanguage; 
+            if(lang.startsWith('zh')) {
+                window.location.href = './zh/index.html';
+            } else {
+                window.location.href = './en/index.html';  
+            }
+            }
+        </script>
+    </head>
+    <body onload="detectLanguage()"></body>
 </html>
