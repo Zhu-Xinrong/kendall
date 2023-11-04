@@ -1,1 +1,1 @@
-['0.0.0 Alpha', 'Unknow', 'No']
+["0.0.0 Alpha", "Unknow", "No"]
