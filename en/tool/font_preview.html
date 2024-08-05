@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-auto">
+    <head>
+        <title>Font preview</title>
+        <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+        <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+        <link rel="icon" type="image/png" href="../../favicon.png">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div style="position: relative;overflow: hidden">
+            <mdui-top-app-bar scroll-behavior="elevate" scroll-target=".scroll-behavior-elevate">
+                <mdui-top-app-bar-title>Font preview</mdui-top-app-bar-title>
+                <mdui-button-icon href="./index.html">
+                    <mdui-icon>
+                        <svg t="1722173952082" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12092" width="200" height="200"><path d="M826.92 857.397H197.08c-33.667 0-60.953-27.287-60.953-60.953V349.46c0-33.666 27.286-60.952 60.952-60.952h121.905v-60.952c0-33.666 27.286-60.953 60.953-60.953h243.809c33.666 0 60.952 27.287 60.952 60.953v60.952H826.921c33.666 0 60.952 27.286 60.952 60.952v446.984c0 33.666-27.286 60.953-60.952 60.953zM644.064 247.873c0-22.43-18.204-40.635-40.634-40.635H400.254c-22.43 0-40.635 18.205-40.635 40.635v40.635h284.444v-40.635z m203.175 121.905c0-22.43-18.204-40.635-40.635-40.635H217.397c-22.43 0-40.635 18.204-40.635 40.635v162.54h304.762v-50.794c0-16.823 13.653-30.476 30.476-30.476s30.476 13.653 30.476 30.476v50.793h304.762v-162.54z m0 203.174H542.476v10.16c0 16.842-13.653 30.475-30.476 30.475s-30.476-13.633-30.476-30.476v-10.159H176.762v203.175c0 22.43 18.204 40.635 40.635 40.635h589.206c22.43 0 40.635-18.205 40.635-40.635V572.952z" p-id="12093"></path></svg>
+                    </mdui-icon>
+                </mdui-button-icon>
+                <mdui-button-icon href="../index.html">
+                    <mdui-icon>
+                        <svg t="1722175063582" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13962" width="200" height="200"><path d="M953.159582 479.577566 553.286312 79.706343c-11.040451-11.040451-25.719778-17.121959-41.335431-17.121959-15.613606 0-30.293957 6.079462-41.335431 17.121959L70.745251 479.577566c-7.598049 7.598049-7.598049 19.916609 0 27.513634 7.598049 7.597025 19.916609 7.599072 27.513634 0l43.552935-43.552935 0 474.622718c0 10.744715 8.710382 19.455097 19.455097 19.455097l701.368952 0c10.745738 0 19.455097-8.710382 19.455097-19.455097l0-474.621694 43.551912 43.551912c3.797489 3.798513 8.776897 5.698792 13.757329 5.698792 4.979408 0 9.958816-1.90028 13.758352-5.698792C960.755584 499.493152 960.755584 487.175615 953.159582 479.577566zM375.517559 918.494061 375.517559 596.506672l272.376481 0 0 321.987389L375.517559 918.494061zM841.107553 908.978337c0 5.372358-4.355191 9.727549-9.727549 9.727549L686.805258 918.705885 686.805258 577.050552c0-10.744715-8.710382-19.455097-19.455097-19.455097L356.062462 557.595454c-10.745738 0-19.455097 8.710382-19.455097 19.455097l0 341.655334L191.294814 918.705885c-5.372358 0-9.727549-4.355191-9.727549-9.727549L181.567265 423.783843 498.131131 107.219977c3.692089-3.691065 8.599865-5.724375 13.820774-5.724375s10.129708 2.033309 13.81975 5.724375l315.335898 315.334875L841.107553 908.978337 841.107553 908.978337z" p-id="13963"></path></svg>
+                    </mdui-icon>
+                </mdui-button-icon>
+                <div style="flex-grow: 1"></div>
+            </mdui-top-app-bar>
+            <div class="example-scroll-behavior-elevate" style="height: 50px;overflow: auto;"></div>
+        </div>
+        <p>Font name: <input type="text" id="fontNameInput"></p>
+        <p>H1~H6 label text: <input type="text" id="headingTextInput"></p>
+        <p>p label text: <input type="text" id="paragraphTextInput"></p>
+        <button onclick="apply()">OK</button>
+        <h1 id="h1Text">This is the H1 heading.</h1>
+        <h2 id="h2Text">This is the H2 heading.</h2>
+        <h3 id="h3Text">This is the H3 heading.</h3>
+        <h4 id="h4Text">This is the H4 heading.</h4>
+        <h5 id="h5Text">This is the H5 heading.</h5>
+        <h6 id="h6Text">This is the H6 heading.</h6>
+        <p id="pText">The quick brown fox jumps over the lazy dog. 0123456789</p>
+        <script>
+            function apply() {
+                var fontName = document.getElementById("fontNameInput").value;
+                document.getElementById("h1Text").style.fontFamily = fontName;
+                document.getElementById("h2Text").style.fontFamily = fontName;
+                document.getElementById("h3Text").style.fontFamily = fontName;
+                document.getElementById("h4Text").style.fontFamily = fontName;
+                document.getElementById("h5Text").style.fontFamily = fontName;
+                document.getElementById("h6Text").style.fontFamily = fontName;
+                document.getElementById("pText").style.fontFamily = fontName;
+
+                var headingText = document.getElementById("headingTextInput").value;
+                if (headingText != "") {
+                    document.getElementById("h1Text").innerHTML = headingText;
+                    document.getElementById("h2Text").innerHTML = headingText;
+                    document.getElementById("h3Text").innerHTML = headingText;
+                    document.getElementById("h4Text").innerHTML = headingText;
+                    document.getElementById("h5Text").innerHTML = headingText;
+                    document.getElementById("h6Text").innerHTML = headingText;
+                }
+                var paragraphText = document.getElementById("paragraphTextInput").value;
+                if (paragraphText != "") document.getElementById("pText").innerHTML = paragraphText;
+            }
+        </script>
+    </body>
+</html>
